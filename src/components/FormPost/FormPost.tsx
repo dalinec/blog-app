@@ -20,17 +20,17 @@ const FormPost: FC<FormPostProps> = ({ submit }) => {
         type='text'
         {...register('title', { required: true })}
         placeholder='Post title'
-        className='input input-bordered w-full max-w-lg'
+        className='input input-bordered w-full max-w-lg border-blue-600'
       />
       <textarea
         {...register('content', { required: true })}
-        className='textarea textarea-bordered w-full max-w-lg'
+        className='textarea textarea-bordered w-full max-w-lg border-blue-600'
         placeholder='Post content'
       ></textarea>
       <select
         {...register('tag', { required: true })}
         defaultValue={''}
-        className='select select-bordered w-full max-w-lg'
+        className='select select-bordered w-full max-w-lg border-blue-600'
       >
         <option disabled value=''>
           Select tags
