@@ -1,9 +1,11 @@
+import BackButton from '@/components/Buttons/BackButton';
 import ButtonAction from '@/components/Buttons/ButtonAction';
 
 const BlogDetailsPage = () => {
   return (
     <>
       <div className='mb-8'>
+        <BackButton />
         <h2 className='text-xl font-bold my-5'>Post One</h2>
         <ButtonAction />
       </div>
