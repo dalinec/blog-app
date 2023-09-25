@@ -1,23 +1,47 @@
-const FormPost = () => {
+'use client';
+
+import { FormInputPost } from '@/types';
+import { FC } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+
+interface FormPostProps {
+  submit: SubmitHandler<FormInputPost>;
+}
+
+const FormPost: FC<FormPostProps> = ({ submit }) => {
+  const { register, handleSubmit } = useForm<FormInputPost>();
+
   return (
-    <form className='flex flex-col items-center justify-center gap-5 mt-10'>
+    <form
+      onSubmit={handleSubmit(submit)}
+      className='flex flex-col items-center justify-center gap-5 mt-10'
+    >
       <input
         type='text'
+        {...register('title', { required: true })}
         placeholder='Post title'
         className='input input-bordered w-full max-w-lg'
       />
       <textarea
+        {...register('content', { required: true })}
         className='textarea textarea-bordered w-full max-w-lg'
         placeholder='Post content'
       ></textarea>
-      <select className='select select-bordered w-full max-w-lg'>
-        <option disabled selected>
+      <select
+        {...register('tag', { required: true })}
+        defaultValue={''}
+        className='select select-bordered w-full max-w-lg'
+      >
+        <option disabled value=''>
           Select tags
         </option>
-        <option>Han Solo</option>
-        <option>Greedo</option>
+        <option>javascript</option>
+        <option>tailwind</option>
+        <option>nextjs</option>
       </select>
-      <button className='btn btnBlue w-full max-w-lg'>Create</button>
+      <button type='submit' className='btn btnBlue w-full max-w-lg'>
+        Create
+      </button>
     </form>
   );
 };
