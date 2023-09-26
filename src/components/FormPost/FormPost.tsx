@@ -9,10 +9,19 @@ import axios from 'axios';
 interface FormPostProps {
   submit: SubmitHandler<FormInputPost>;
   isEditing: boolean;
+  initialVal?: FormInputPost;
+  isLoadingSubmit?: boolean;
 }
 
-const FormPost = ({ submit, isEditing }: FormPostProps) => {
-  const { register, handleSubmit } = useForm<FormInputPost>();
+const FormPost = ({
+  submit,
+  isEditing,
+  initialVal,
+  isLoadingSubmit,
+}: FormPostProps) => {
+  const { register, handleSubmit } = useForm<FormInputPost>({
+    defaultValues: initialVal,
+  });
 
   //fetch list tags, the "data: dataTags" is just a rename of the data that is being fetched
   const { data: dataTags, isLoading: isLoadingTags } = useQuery<Tag[]>({
@@ -62,7 +71,14 @@ const FormPost = ({ submit, isEditing }: FormPostProps) => {
       )}
 
       <button type='submit' className='btn btnBlue w-full max-w-lg'>
-        {isEditing ? 'Update' : 'Create'}
+        {isLoadingSubmit && <span className='loading loading-spinner'></span>}
+        {isEditing
+          ? isLoadingSubmit
+            ? 'Updating...'
+            : 'Update'
+          : isLoadingSubmit
+          ? 'Creating...'
+          : 'Create'}
       </button>
     </form>
   );
