@@ -1,6 +1,6 @@
 import BackButton from '@/components/Buttons/BackButton';
 import ButtonAction from '@/components/Buttons/ButtonAction';
-import { getPost } from '@/app/api/post/getPost';
+import { getPost } from '@/app/api/post/get/getPost';
 
 interface BlodDetailsPageProps {
   params: {

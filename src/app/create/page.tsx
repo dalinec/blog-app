@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { SubmitHandler } from 'react-hook-form';
 import { FormInputPost } from '@/types';
 import FormPost from '@/components/FormPost/FormPost';
@@ -10,7 +10,6 @@ import axios from 'axios';
 
 const CreatePage = () => {
   const router = useRouter();
-  const queryClient = useQueryClient();
 
   const handleCreatePost: SubmitHandler<FormInputPost> = (data) => {
     createPost(data);
