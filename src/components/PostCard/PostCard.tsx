@@ -2,9 +2,9 @@ import { Tag } from '@prisma/client';
 import Link from 'next/link';
 
 interface PostCardProps {
+  id: string;
   title: string;
   content: string;
-  id: string;
   tag: Tag;
 }
 
