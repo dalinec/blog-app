@@ -7,11 +7,11 @@ interface ProvidersProps {
   children: ReactNode;
 }
 
-const qurtyClient = new QueryClient();
+const queryClient = new QueryClient();
 
 const Providers = ({ children }: ProvidersProps) => {
   return (
-    <QueryClientProvider client={qurtyClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };
 
