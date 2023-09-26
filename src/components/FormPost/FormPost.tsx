@@ -23,8 +23,6 @@ const FormPost = ({ submit, isEditing }: FormPostProps) => {
     },
   });
 
-  console.log(dataTags);
-
   return (
     <form
       onSubmit={handleSubmit(submit)}
@@ -46,7 +44,7 @@ const FormPost = ({ submit, isEditing }: FormPostProps) => {
         <span className='loading loading-dots loading-md'></span>
       ) : (
         <select
-          {...register('tag', { required: true })}
+          {...register('tagId', { required: true })}
           defaultValue={''}
           className='select select-bordered w-full max-w-lg border-blue-600'
         >

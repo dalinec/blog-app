@@ -1,14 +1,34 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { SubmitHandler } from 'react-hook-form';
-import FormPost from '@/components/FormPost/FormPost';
 import { FormInputPost } from '@/types';
+import FormPost from '@/components/FormPost/FormPost';
 import BackButton from '@/components/Buttons/BackButton';
+import axios from 'axios';
 
 const CreatePage = () => {
+  const router = useRouter();
+  const queryClient = useQueryClient();
+
   const handleCreatePost: SubmitHandler<FormInputPost> = (data) => {
-    console.log(data);
+    createPost(data);
   };
+
+  const { mutate: createPost, isLoading } = useMutation({
+    mutationFn: (newPost: FormInputPost) => {
+      return axios.post('/api/post/create', newPost);
+    },
+    onError: (error) => {
+      console.error(error);
+    },
+
+    onSuccess: () => {
+      router.push('/');
+      router.refresh();
+    },
+  });
 
   return (
     <div>
