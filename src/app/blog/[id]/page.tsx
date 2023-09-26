@@ -13,15 +13,15 @@ const BlogDetailsPage = async ({ params }: BlogDetailsPageProps) => {
 
   return (
     <>
-      <div className='mb-8'>
-        <BackButton />
-        <div className='flex items-center justify-between'>
+      <BackButton />
+      <div className='flex items-center justify-between mb-5'>
+        <div>
           <h2 className='text-xl font-bold my-5'>{post?.title}</h2>
-          <ButtonAction id={params.id} />
+          <span className='badge  badge-neutral '>{post?.tag.name}</span>
         </div>
+        <ButtonAction id={params.id} />
       </div>
       <p className='text-slate-700'>{post?.content}</p>
-      <span className='badge badge-neutral mr-auto'>{post?.tag.name}</span>
     </>
   );
 };

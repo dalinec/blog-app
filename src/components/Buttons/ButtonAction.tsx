@@ -29,7 +29,7 @@ const ButtonAction = ({ id }: ButtonActionProps) => {
 
   return (
     <div>
-      <Link href={'/edit/id'} className='btn mr-2'>
+      <Link href={`/edit/${id}`} className='btn mr-2'>
         <PenSquare />
         Edit
       </Link>
