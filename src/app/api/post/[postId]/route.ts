@@ -7,7 +7,7 @@ interface contextProps {
   };
 }
 
-export const DELETE = async (context: contextProps) => {
+export const DELETE = async (req: Request, context: contextProps) => {
   try {
     const { params } = context;
     await db.post.delete({
