@@ -7,13 +7,6 @@ interface BlogDetailsPageProps {
     id: string;
   };
 }
-import { getPost } from '@/app/api/post/get/getPost';
-
-interface BlogDetailsPageProps {
-  params: {
-    id: string;
-  };
-}
 
 const BlogDetailsPage = async ({ params }: BlogDetailsPageProps) => {
   const post = await getPost(params.id);
