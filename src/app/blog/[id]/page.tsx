@@ -17,11 +17,16 @@ const BlogDetailsPage = async ({ params }: BlogDetailsPageProps) => {
       <div className='flex items-center justify-between mb-5'>
         <div>
           <h2 className='text-xl font-bold my-5'>{post?.title}</h2>
-          <span className='badge  badge-neutral '>{post?.tag.name}</span>
+          <span className='badge badge-neutral '>{post?.tag.name}</span>
         </div>
-        <ButtonAction id={params.id} />
+        <div className='hidden sm:block'>
+          <ButtonAction id={params.id} />
+        </div>
       </div>
       <p className='text-slate-700'>{post?.content}</p>
+      <div className='block sm:hidden mt-5'>
+        <ButtonAction id={params.id} />
+      </div>
     </>
   );
 };

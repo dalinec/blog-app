@@ -13,7 +13,7 @@ const PostCard = ({ title, content, id, tag }: PostCardProps) => {
     <Link href={`/blog/${id}`}>
       <div className='card w-full bg-base-100 shadow-xl border hover:cursor-pointer hover:scale-105 duration-150 ease-in'>
         <div className='card-body'>
-          <h2 className='card-title truncate'>{title}</h2>
+          <h2 className='font-semibold text-xl truncate'>{title}</h2>
           <p className='mb-4 truncate'>{content}</p>
           <div className='card-actions justify-end'>
             <span className='badge badge-neutral mr-auto'>{tag.name}</span>
