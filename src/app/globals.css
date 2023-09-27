@@ -5,3 +5,7 @@
 .btnBlue {
   @apply bg-blue-600 text-white hover:bg-blue-500 ease-in duration-150;
 }
+
+.loading-lg {
+  @apply w-[100] h-[100];
+}
