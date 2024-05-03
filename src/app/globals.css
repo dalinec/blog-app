@@ -9,3 +9,9 @@
 .loading-lg {
   @apply w-[80px] h-[80px];
 }
+
+input,
+textarea,
+select {
+  @apply bg-white text-black !important;
+}
