@@ -6,9 +6,9 @@ export default async function Home() {
 
   return (
     <main className='grid items-center justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10'>
-      {posts.map((post) => {
-        return <PostCard key={post.id} {...post} />;
-      })}
+      {posts.map((post) => (
+        <PostCard key={post.id} {...post} />
+      ))}
     </main>
   );
 }
