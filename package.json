@@ -10,7 +10,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "^5.3.1",
+    "@prisma/client": "^5.13.0",
     "@tanstack/react-query": "^4.35.3",
     "@types/node": "20.6.5",
     "@types/react": "18.2.22",
@@ -31,6 +31,6 @@
   "devDependencies": {
     "daisyui": "^3.7.7",
     "prettier-plugin-prisma": "^5.0.0",
-    "prisma": "^5.3.1"
+    "prisma": "^5.13.0"
   }
 }
