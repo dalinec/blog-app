@@ -1,4 +1,5 @@
 import { db } from '@/lib/db';
+import { revalidatePath } from 'next/cache';
 import { NextResponse } from 'next/server';
 
 export const POST = async (req: Request) => {
@@ -11,6 +12,7 @@ export const POST = async (req: Request) => {
         tagId: body.tagId,
       },
     });
+    revalidatePath('/');
     return NextResponse.json(post, { status: 200 });
   } catch (error) {
     return NextResponse.json(

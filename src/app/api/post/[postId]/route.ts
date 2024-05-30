@@ -1,4 +1,5 @@
 import { db } from '@/lib/db';
+import { revalidatePath } from 'next/cache';
 import { NextResponse } from 'next/server';
 
 interface contextProps {
@@ -15,6 +16,7 @@ export const DELETE = async (req: Request, context: contextProps) => {
         id: params.postId,
       },
     });
+    revalidatePath('/');
     return new Response(null, { status: 204 });
   } catch (error) {
     return NextResponse.json(
@@ -39,6 +41,7 @@ export const PATCH = async (req: Request, context: contextProps) => {
         tagId: body.tagId,
       },
     });
+    revalidatePath('/');
     return NextResponse.json({ status: 200 });
   } catch (error) {
     return NextResponse.json(

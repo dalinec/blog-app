@@ -14,5 +14,6 @@ export const getPosts = async () => {
       createdAt: 'desc',
     },
   });
+
   return res;
 };
