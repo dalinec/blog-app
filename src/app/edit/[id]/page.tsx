@@ -33,8 +33,8 @@ const EditPage = ({ params }: EditPostpageProps) => {
     },
 
     onSuccess: () => {
-      router.push('/');
       router.refresh();
+      router.push('/');
     },
   });
 

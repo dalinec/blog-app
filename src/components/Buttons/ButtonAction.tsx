@@ -22,8 +22,8 @@ const ButtonAction = ({ id }: ButtonActionProps) => {
     },
 
     onSuccess: () => {
-      router.push('/');
       router.refresh();
+      router.push('/');
     },
   });
 

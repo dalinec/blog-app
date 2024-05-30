@@ -24,8 +24,8 @@ const CreatePage = () => {
     },
 
     onSuccess: () => {
-      router.push('/');
       router.refresh();
+      router.push('/');
     },
   });
 
