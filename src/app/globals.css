@@ -15,3 +15,8 @@ textarea,
 select {
   @apply bg-white text-black !important;
 }
+
+.badge,
+.badge-neutral {
+  @apply py-3 px-4 !important;
+}

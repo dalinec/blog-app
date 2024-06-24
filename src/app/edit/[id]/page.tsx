@@ -44,7 +44,7 @@ const EditPage = ({ params }: EditPostpageProps) => {
 
   if (isLoadingPost) {
     return (
-      <div className='text-center'>
+      <div className='w-full h-screen flex items-center justify-center'>
         <span className='loading loading-spinner loading-lg'></span>
       </div>
     );

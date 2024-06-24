@@ -77,8 +77,8 @@ const FormPost = ({
             ? 'Updating...'
             : 'Update'
           : isLoadingSubmit
-          ? 'Creating...'
-          : 'Create'}
+            ? 'Creating...'
+            : 'Create'}
       </button>
     </form>
   );

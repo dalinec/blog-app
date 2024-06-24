@@ -15,7 +15,7 @@ const CreatePage = () => {
     createPost(data);
   };
 
-  const { mutate: createPost, isLoading } = useMutation({
+  const { mutate: createPost, isLoading: isCreatingPost } = useMutation({
     mutationFn: (newPost: FormInputPost) => {
       return axios.post('/api/post/create', newPost);
     },
@@ -28,6 +28,14 @@ const CreatePage = () => {
       router.push('/');
     },
   });
+
+  if (isCreatingPost) {
+    return (
+      <div className='w-full h-screen flex items-center justify-center'>
+        <span className='loading loading-spinner loading-lg'></span>
+      </div>
+    );
+  }
 
   return (
     <div>

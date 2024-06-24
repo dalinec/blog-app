@@ -17,7 +17,7 @@ const BlogDetailsPage = async ({ params }: BlogDetailsPageProps) => {
       <div className='flex items-center justify-between mb-5'>
         <div>
           <h2 className='text-xl font-bold my-5'>{post?.title}</h2>
-          <span className='badge badge-neutral '>{post?.tag.name}</span>
+          <span className='badge badge-neutral'>{post?.tag.name}</span>
         </div>
         <div className='hidden sm:block'>
           <ButtonAction id={params.id} />
